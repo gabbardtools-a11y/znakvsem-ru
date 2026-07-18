@@ -115,73 +115,23 @@
       Поиск по всем актуальным базам и реестрам ФИПС — бесплатно и без регистрации.
     </p>
 
-    <!-- Search form -->
-    <div class="bg-slate-900/80 backdrop-blur rounded-2xl border border-slate-800 shadow-2xl p-5 md:p-6 max-w-3xl mx-auto fade-in">
-      <!-- Mode tabs -->
-      <div class="flex gap-1 p-1 bg-slate-800 rounded-lg mb-4 max-w-md mx-auto">
-        <button data-mode="name" class="mode-tab flex-1 px-3 py-2 rounded-md text-sm font-medium transition-all tab-active">
-          По названию
-        </button>
-        <button data-mode="number" class="mode-tab flex-1 px-3 py-2 rounded-md text-sm font-medium transition-all text-slate-400 hover:text-white">
-          По номеру
-        </button>
-        <button data-mode="owner" class="mode-tab flex-1 px-3 py-2 rounded-md text-sm font-medium transition-all text-slate-400 hover:text-white">
-          По владельцу
-        </button>
+    <!-- Embedded search form (iframe from NayTea.ru) -->
+    <div class="max-w-5xl mx-auto fade-in">
+      <div class="bg-slate-900/80 backdrop-blur rounded-2xl border border-slate-800 shadow-2xl overflow-hidden">
+        <iframe
+          src="https://naytea.ru/partners/search"
+          title="Поиск товарных знаков по реестрам Роспатента"
+          class="w-full"
+          style="height: 75vh; min-height: 600px; border: 0; display: block;"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          allow="fullscreen"
+        ></iframe>
       </div>
-
-      <!-- Search input + button -->
-      <form id="search-form" action="https://naytea.ru/search" method="GET" target="_blank" class="flex flex-col sm:flex-row gap-3">
-        <div class="flex-1 relative">
-          <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-          </svg>
-          <input
-            id="search-input"
-            name="q"
-            type="text"
-            required
-            placeholder="Введите название товарного знака..."
-            class="search-input w-full pl-11 pr-4 h-12 rounded-lg bg-slate-950 border border-slate-700 text-white placeholder:text-slate-500"
-            autocomplete="off"
-          >
-        </div>
-        <button type="submit" class="h-12 px-6 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-semibold flex items-center justify-center gap-2 transition-colors whitespace-nowrap">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-          Проверить
-        </button>
-      </form>
-
-      <!-- Hints -->
-      <div class="flex flex-wrap items-center justify-center gap-2 mt-4 text-xs text-slate-500">
-        <span>Примеры:</span>
-        <button class="example-btn px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors" data-q="Apple">Apple</button>
-        <button class="example-btn px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors" data-q="Сбер">Сбер</button>
-        <button class="example-btn px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors" data-q="Яндекс">Яндекс</button>
-        <button class="example-btn px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors" data-q="NayTea">NayTea</button>
-      </div>
-
-      <!-- Trust badges -->
-      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-5 pt-4 border-t border-slate-800 text-xs text-slate-400">
-        <span class="flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-          100% бесплатно
-        </span>
-        <span class="flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-          Без регистрации
-        </span>
-        <span class="flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-          База от 2026-04-10
-        </span>
-      </div>
+      <p class="text-xs text-slate-500 mt-3 text-center">
+        Поиск работает через агрегатор <a href="https://naytea.ru" target="_blank" rel="noopener" class="text-blue-400 hover:underline">NayTea.ru</a> · данные из открытых реестров Роспатента (ФИПС)
+      </p>
     </div>
-
-    <!-- Note about partner -->
-    <p class="text-xs text-slate-500 mt-4 max-w-md mx-auto">
-      Поиск работает через агрегатор <a href="https://naytea.ru" target="_blank" rel="noopener" class="text-blue-400 hover:underline">NayTea.ru</a> — нажмите «Проверить», чтобы открыть результаты в новой вкладке.
-    </p>
   </div>
 </section>
 
@@ -317,77 +267,6 @@
 </footer>
 
 <script>
-  // Mode tabs
-  const tabs = document.querySelectorAll('.mode-tab');
-  const input = document.getElementById('search-input');
-  const form = document.getElementById('search-form');
-
-  const placeholders = {
-    name: 'Введите название товарного знака...',
-    number: 'Номер свидетельства (например, 80445)...',
-    owner: 'Наименование владельца (например, ООО «Ромашка»)...'
-  };
-
-  const exampleSets = {
-    name: [
-      {label: 'Apple', q: 'Apple'},
-      {label: 'Сбер', q: 'Сбер'},
-      {label: 'Яндекс', q: 'Яндекс'},
-      {label: 'NayTea', q: 'NayTea'}
-    ],
-    number: [
-      {label: '80445', q: '80445'},
-      {label: '123456', q: '123456'},
-      {label: '744925', q: '744925'}
-    ],
-    owner: [
-      {label: 'Сбербанк', q: 'Сбербанк'},
-      {label: 'Яндекс', q: 'Яндекс'},
-      {label: 'Gazprom', q: 'Gazprom'}
-    ]
-  };
-
-  const examplesContainer = document.querySelector('.flex.flex-wrap.items-center.justify-center.gap-2.mt-4');
-
-  function renderExamples(mode) {
-    const items = exampleSets[mode] || exampleSets.name;
-    examplesContainer.innerHTML = '<span>Примеры:</span>' + items.map(item =>
-      `<button type="button" class="example-btn px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors" data-q="${item.q}">${item.label}</button>`
-    ).join('');
-    // Re-bind click handlers
-    examplesContainer.querySelectorAll('.example-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        input.value = btn.dataset.q;
-        input.focus();
-      });
-    });
-  }
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => {
-        t.classList.remove('tab-active');
-        t.classList.add('text-slate-400');
-      });
-      tab.classList.add('tab-active');
-      tab.classList.remove('text-slate-400');
-      const mode = tab.dataset.mode;
-      input.placeholder = placeholders[mode];
-      renderExamples(mode);
-    });
-  });
-
-  // Initial examples
-  renderExamples('name');
-
-  // Example buttons (initial set)
-  document.querySelectorAll('.example-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      input.value = btn.dataset.q;
-      input.focus();
-    });
-  });
-
   // Fade-in animation on scroll
   const fadeIns = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver((entries) => {
