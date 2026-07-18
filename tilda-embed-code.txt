@@ -1,0 +1,108 @@
+============================================================
+  КОД ДЛЯ ВСТАВКИ В ТИЛЬДУ — Поиск товарных знаков
+  Сайт: patentvsem.ru
+  Источник: naytea.ru/partners/search
+============================================================
+
+ИНСТРУКЦИЯ (пошагово):
+  1. Откройте редактор Тильды: https://tilda.cc
+  2. Откройте нужную страницу (например, Главную или страницу "Услуги")
+  3. Нажмите на "+ Блок" в нужном месте страницы
+  4. В поиске блоков введите: T123 (или "HTML-код")
+     → выберите блок "HTML-код" (иконка </>)
+  5. Нажмите на блок правой кнопкой → "Редактировать HTML-код"
+  6. Вставьте ВЕС КОД НИЖУ (от <style> до </script>) в поле
+  7. Нажмите "Сохранить" → "Опубликовать страницу"
+
+  Готово! На странице появится поисковая форма.
+  Пользователи смогут искать знаки прямо на patentvsem.ru.
+
+============================================================
+
+  ⬇️ КОПИРОВАТЬ ВСЁ НИЖЕ (от <style> до </script>) ⬇️
+
+============================================================
+
+<style>
+  .naytea-search-wrapper {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+  .naytea-search-iframe {
+    width: 100%;
+    height: 75vh;
+    min-height: 600px;
+    max-height: 1200px;
+    border: 0;
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  @media (max-width: 640px) {
+    .naytea-search-iframe {
+      height: 85vh;
+      min-height: 500px;
+    }
+  }
+</style>
+
+<div class="naytea-search-wrapper">
+  <iframe
+    src="https://naytea.ru/partners/search"
+    title="Поиск товарных знаков по реестрам Роспатента"
+    class="naytea-search-iframe"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    allow="fullscreen"
+  ></iframe>
+</div>
+
+============================================================
+
+  ⬆️ КОПИРОВАТЬ ВСЁ ВЫШЕ ⬆️
+
+============================================================
+
+
+ЧТО БУДЕТ ВИДНО НА СТРАНИЦЕ:
+  • Поисковая форма (с вкладками «По названию / По номеру / По владельцу»)
+  • Поле ввода + синяя кнопка «Проверить»
+  • Поиск по изображению (drag & drop)
+  • Фильтры: Классы МКТУ, ОКВЭД, ИНН/ОГРН
+  • Результаты в виде карточек с изображениями знаков
+  • Кнопки экспорта RTF и SVG (когда есть результаты)
+
+ФОН:
+  Фон формы — прозрачный. Поиск будет смотреться органично
+  на фоне любого блока Тильды (светлого или тёмного).
+
+ПОДДЕРЖКА:
+  • Поиск работает через NayTea.ru (бесплатно, без регистрации)
+  • Данные: linkmark.ru, brand-search.ru, WIPO GBD, Роспатент (ФИПС)
+  • Если возникнут вопросы — naytea.ru
+
+============================================================
+
+Вариант 2 — компактный (для узких блоков, высота 500px):
+
+<style>
+  .naytea-search-wrapper { width:100%; max-width:960px; margin:0 auto; padding:0 16px; box-sizing:border-box; }
+  .naytea-search-iframe { width:100%; height:500px; border:0; display:block; border-radius:12px; }
+</style>
+<div class="naytea-search-wrapper">
+  <iframe src="https://naytea.ru/partners/search" title="Поиск товарных знаков" class="naytea-search-iframe" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allow="fullscreen"></iframe>
+</div>
+
+============================================================
+
+Вариант 3 — максимально компактный (одна строка, для вставки в виджет):
+
+<iframe src="https://naytea.ru/partners/search" style="width:100%;height:600px;border:0;border-radius:12px;" title="Поиск товарных знаков" loading="lazy"></iframe>
+
+============================================================
+
+© 2026 NayTea.ru — бесплатный поиск товарных знаков по открытым реестрам Роспатента.
+Код создан специально для ИП Довлатова Игоря Мамедяревича (patentvsem.ru).
